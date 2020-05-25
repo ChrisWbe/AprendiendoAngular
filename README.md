@@ -15,6 +15,11 @@ Generar componente
 
 ```
 
+Crear Branch e ingresar a la misma
+```
+    git checkout -b <nombre-rama>
+```
+
 -----------
 
 # AprendiendoAngular
