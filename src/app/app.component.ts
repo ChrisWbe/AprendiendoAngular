@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AprendiendoAngular';
+
+  onSayHello(message){
+    console.log(message);
+  }
 }
