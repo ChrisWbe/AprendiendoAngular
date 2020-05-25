@@ -1,3 +1,22 @@
+# Angular
+
+En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de la web. Dicho estudio se divide en modulos marcados por branchs de acuerdo a cada módulo.
+
+## Módulos
+- **mi-component**: Creación de proyecto, creación de componentes por comando
+
+## Links de interes
+<a href="https://angular.io/cli">Angular CLI</a>
+
+## Algunos comandos
+Generar componente
+```
+    ng g component <nombre-componente>
+
+```
+
+-----------
+
 # AprendiendoAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
