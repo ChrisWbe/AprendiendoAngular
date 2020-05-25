@@ -8,6 +8,7 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 - **property-bindings**: Enviar información desde el componente padre al componente hijo.
 - **event-bindings**: Enviar información desde el componente hijo al componente padre, eventos.
 - **bi-directional-bindings**: Flujo bidireccional utilizando ambos bindings.
+- **ng-model**: Flujo bidireccional con ngModel.
 
 ## Links de interes
 <a href="https://angular.io/cli">Angular CLI</a>
