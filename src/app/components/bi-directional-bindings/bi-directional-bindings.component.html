@@ -1,0 +1,5 @@
+<p>bi-directional-bindings works!</p>
+<div>
+    <input type="text" [value]="inputName" (keyup)="updateInputName($event)">
+    <button (click)="addName()">Add Name</button>
+</div>
