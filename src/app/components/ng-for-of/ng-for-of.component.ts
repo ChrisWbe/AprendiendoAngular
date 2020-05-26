@@ -7,7 +7,7 @@ import { Component, OnInit} from '@angular/core';
 })
 export class NgForOfComponent implements OnInit {
 
-  public nameList:Array<string> = ['christian', 'wbeimar'];
+  public nameList:Array<string> = ['christian', 'wbeimar', 'Quintero'];
   constructor() { 
 
   }
