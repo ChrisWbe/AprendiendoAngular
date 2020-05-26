@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgModelComponent } from './components/ng-model/ng-model.component';
 import {LoggerServices} from './logger.service';
+import {GreetingService} from './greetings.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import {LoggerServices} from './logger.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [LoggerServices], //se pasa el proveedor para utilizarlo en el componente
+  providers: [LoggerServices, GreetingService], //se pasa el proveedor para utilizarlo en el componente
   bootstrap: [AppComponent]
 })
 export class AppModule { }
