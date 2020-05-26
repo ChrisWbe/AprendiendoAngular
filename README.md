@@ -9,15 +9,50 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 - **event-bindings**: Enviar información desde el componente hijo al componente padre, eventos.
 - **bi-directional-bindings**: Flujo bidireccional utilizando ambos bindings.
 - **ng-model**: Flujo bidireccional con ngModel.
+- **Template References**: Referencia a las propiedades de un componente, así como sus métodos.
+- **Class Bindings**
+- **Style Bindings**
+- **ngForOf**: Directivas, para el comportamiento de los componentes.
+- **ngIf**
+- **ngSwitch**
+- **ngClass**
+- **ngStyle**
+- **Pipes y pipes personalizados**
+- **Servicios e inyección de dependencias**
 
 ## Links de interes
 <a href="https://angular.io/cli">Angular CLI</a>
 
 ## Algunos comandos
-Generar componente
+Crear componente
 ```
     ng g component <nombre-componente>
 
+```
+
+Crear servicio
+```
+    ng g service <nombre-servicio>
+```
+
+Crear Pipe
+```
+    ng g pipe <nombre-pipe>
+```
+
+Optimizado para producción
+```
+    ng build --prod
+```
+
+Subir al tiempo todas las ramas
+```
+    git push --all origin
+```
+
+Agregar todos los archivos modificados y escribir mensaje
+```
+    git commit -am "mensaje"
 ```
 
 -----------
