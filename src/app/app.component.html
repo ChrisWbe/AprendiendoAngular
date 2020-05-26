@@ -1,5 +1,7 @@
 <div style="text-align: center;"> 
-
+  <h1 [style.font-size.%]="myComponent.nameList.length > 0 ? 200 : 500" [style.color]="myComponent.nameList.length > 0 ? 'red': 'green'">
+    Christian Quintero
+  </h1>
   <div [class.hidden]="myComponent.inputName.length == 0">Escribiendo '{{myComponent.inputName}}'</div>
   <app-class-bindings #myComponent></app-class-bindings>
 </div>

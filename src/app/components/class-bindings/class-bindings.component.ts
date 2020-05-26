@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassBindingsComponent implements OnInit {
   public inputName:string;
+  public nameList:Array<string> = [];
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +15,11 @@ export class ClassBindingsComponent implements OnInit {
 
   updateInputName(event:any){
     this.inputName = event.target.value;
+  }
+
+  addName(){
+    this.nameList.push(this.inputName);
+    this.inputName="";
   }
 
 }
