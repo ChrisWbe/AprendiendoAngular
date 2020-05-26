@@ -1,5 +1,14 @@
 <p>ng-model works!</p>
-<div>
-    <input type="text" [(ngModel)]="inputName">
-    <button (click)="addName()">Add Name</button>
+<div [ngSwitch]="nameList.length < 5">
+    <div *ngSwitchCase="true">
+        <div>
+            <input type="text" [(ngModel)]="inputName">
+            <button (click)="addName()">Add Name</button>
+        </div>
+    </div>
+    <div *ngSwitchCase="false">
+        <p>No puedes seguir añadiendo más nombres</p>
+    </div>
 </div>
+
+<p *ngFor="let item of nameList; index as i">{{i}} - Hola {{item}}</p>
