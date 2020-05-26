@@ -1,5 +1,7 @@
 <div style="text-align: center;"> 
 
-  <div [class.hidden]="myComponent.inputName.length == 0">Escribiendo '{{myComponent.inputName}}'</div>
+  <div [class.hidden]="myComponent.inputName.length == 0">
+    <span [ngClass]="updateNameClasses(myComponent.inputName)">Escribiendo '{{myComponent.inputName}}'</span>
+  </div>
   <app-class-bindings #myComponent></app-class-bindings>
 </div>
