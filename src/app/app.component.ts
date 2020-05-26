@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LoggerServices} from './logger.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AprendiendoAngular';
+
+  constructor(private logger:LoggerServices){
+    logger.warn("PRueba");
+  }
 }
