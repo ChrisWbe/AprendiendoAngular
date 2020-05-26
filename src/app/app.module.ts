@@ -4,11 +4,13 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NgModelComponent } from './components/ng-model/ng-model.component';
+import {UpperCapitalPipe} from './components/ng-model/upper-capital.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgModelComponent
+    NgModelComponent,
+    UpperCapitalPipe,
   ],
   imports: [
     BrowserModule,
