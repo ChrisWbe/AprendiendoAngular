@@ -11,4 +11,4 @@
     </div>
 </div>
 
-<p *ngFor="let item of nameList; index as i">{{i}} - Hola {{item}}</p>
+<p *ngFor="let item of nameList; index as i">{{i}} - Hola {{item | slice:0:1 | uppercase }}{{item | slice:1 | lowercase }}</p>
