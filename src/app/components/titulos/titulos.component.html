@@ -1,0 +1,20 @@
+<p>titulos works!</p>
+ <!--Interpolación-->
+<h2>Hola soy {{nombre}} {{apellido}}</h2>
+
+<!--Property Binding []-->
+<img [src]="imagen" title="Angular" width="50" height="50"><br>
+<input [value]="input"><br>
+
+<!--ngModule, se necesita exportar FormsModule-->
+<input type="text" [(ngModel)] ="inputNuevo">
+<p>{{inputNuevo}}</p><br>
+
+<label>Correo
+    <input type="text" [(ngModel)]="correo">
+</label>
+<label>Password
+    <input type="password" [(ngModel)]="pass">
+</label>
+<button (click)="ingresar()">Ingresar</button>
+
