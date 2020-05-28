@@ -55,6 +55,11 @@ Agregar todos los archivos modificados y escribir mensaje
     git commit -am "mensaje"
 ```
 
+Compilar TypeScript y visualizar
+```
+    tsc <archivo.ts> --watch
+```
+
 -----------
 
 # AprendiendoAngular
