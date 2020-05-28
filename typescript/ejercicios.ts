@@ -133,4 +133,24 @@ var Juan:Alumno = new Alumno("Juan", "Perez", 80);
 Juan.mostrarMensaje();
 
 //Arreglos
+//Push: Agregar elementos a un arreglo
 list.push("5");
+console.log(list);
+listPersonas.push({nombre:"Ana", apellido:"PErez", edad:50, peso:100});
+console.log(listPersonas);
+//Splice: Quitar elementos de un arreglo
+list.splice(0, 2);
+console.log(list);
+listPersonas.splice(0,2);
+console.log(listPersonas);
+//FuncionesAnónimas
+list.forEach((nombre) =>{
+    console.log(nombre)
+});
+listPersonas.forEach((persona)=>{
+    console.log(`Aumno: ${persona.nombre}, pesa: ${persona.peso}Kg`);
+});
+//Find
+listPersonas.find((persona)=>{
+    return persona.edad == 50
+})
