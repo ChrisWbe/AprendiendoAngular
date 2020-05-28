@@ -11,10 +11,28 @@
 <p>{{inputNuevo}}</p><br>
 
 <label>Correo
-    <input type="text" [(ngModel)]="correo">
+    <input type="text" (ngModelChange)="escribirCorreo()" [(ngModel)]="correo">
 </label>
 <label>Password
-    <input type="password" [(ngModel)]="pass">
+    <input type="password" (ngModelChange)="escribirPass()" [(ngModel)]="pass">
 </label>
-<button (click)="ingresar()">Ingresar</button>
+<button (dblclick)="ingresar()">DobleClick</button>
 
+<br>
+<!--Input-->
+<label>Input</label>
+<input type="text" (input)="escribir($event)">
+<br>
+
+<!--Focus-->
+<label>Focus</label>
+<input type="text" (focus)="colorearFondo($event)">
+<br>
+
+<!--KeyDown - KeyUp-->
+<label>KeyDown - KeyUp</label>
+<input type="text" (keydown)="keyDown($event)" (keyup)="keyUp($event)">
+<br>
+
+<!--MouseEnter - MouseLeave-->
+<img [src]="imagen" title="Angular" width="100" height="100" (mouseenter)="cambiarTamano($event)" (mouseleave)="volverTamano($event)" >
