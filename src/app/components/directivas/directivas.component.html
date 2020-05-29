@@ -1,0 +1,38 @@
+<p>directivas works!</p>
+
+<!-- ngIf -->
+<div *ngIf="!cargando">
+    <p>Termino de cargar</p>
+</div>
+<img *ngIf="cargando" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" alt="Loading">
+
+<button (click)="alternar()">Alternar</button>
+
+<!-- ngFor -->
+<div *ngFor="let nombre of nombres">
+    <p>Hola mi nombres es {{nombre}}</p>
+</div>
+
+<div *ngFor="let producto of productos" class="productos">
+    <p>El producto es: {{producto.nombre}}, el stock es: {{producto.stock}}, su fabreicante es: {{producto.fabricante}}, vencimiento: {{producto.fechaVence}}</p>
+</div>
+
+<!-- ngSwitch -->
+<div class="tab" [ngSwitch]="pestana">
+    <button (click)="cambiarPestana('perfil')">Perfil</button>
+    <button (click)="cambiarPestana('puntos')">Puntos</button>
+    <button (click)="cambiarPestana('info')">Info</button>
+    <div class="tabContenido">
+        <p *ngSwitchCase="'perfil'">Estes es el perfil</p>
+        <p *ngSwitchCase="'puntos'">Estes son los puntos</p>
+        <p *ngSwitchCase="'info'">Esta es la info</p>
+        <p *ngSwitchDefault>Selecciones una pestaña</p>
+    </div>
+</div>
+
+<!-- ngClass -->
+<button (click)="alternarCuadrado()">Cuadrado</button>
+<div [ngClass]="{'cuadrado':mostrarCuadrado}">
+    <p [class.textoImportante]="mostrarCuadrado">Este debería ser verde</p>
+</div>
+

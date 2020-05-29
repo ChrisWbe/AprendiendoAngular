@@ -1,0 +1,29 @@
+<p>ejemplos works!</p>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input [(ngModel)]="alumno.nombre" name="nombre" type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" >
+            <small id="nombreHelp" class="form-text text-muted">Ingrese su nombre</small>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input [(ngModel)]="alumno.apellido" type="text" name="apellido" class="form-control" id="apellido" aria-describedby="apellidoHelp" >
+            <small id="apellidoHelp" class="form-text text-muted">Ingrese su Apellido</small>
+        </div>
+        <div class="form-group">
+            <label for="excelencia">Excelencia</label>
+            <select [(ngModel)]="alumno.excelencia" name="excelencia" class="form-control" id="excelencia">
+                <option value="false">No</option>
+                <option value="true">Si</option>
+              </select>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="agregar()">Agregar</button>
+    </form>
+
+    <div *ngFor="let itemAlumno of listadoAlumnos"class="card">
+        <div class="card-body">
+          <span [ngClass]="alumnoExcelente(itemAlumno.excelencia)">Alumno:</span> {{itemAlumno.nombre}} {{itemAlumno.apellido}}
+        </div>
+    </div>
+</div>
