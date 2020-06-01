@@ -40,6 +40,13 @@ Crear Pipe
     ng g pipe <nombre-pipe>
 ```
 
+Generar Routing
+```
+    ng g module app-routing --flat --module=app
+    --flat puts the file in src/app instead of its own folder.
+    --module=app tells the CLI to register it in the imports array of the AppModule.
+```
+
 Optimizado para producción
 ```
     ng build --prod
