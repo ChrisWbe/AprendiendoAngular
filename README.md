@@ -20,8 +20,20 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 - **Pipes y pipes personalizados**
 - **Servicios e inyección de dependencias**
 
+## Módulos 2
+- **TypeScript**
+- **Componentes**
+- **Eventos**
+- **Directivas**
+- **Pipes**
+- **Routing**
+- **Reactive Forms**
+- **Servicios**
+
 ## Links de interes
 <a href="https://angular.io/cli">Angular CLI</a>
+
+<a href="https://getbootstrap.com/">Bootstrap</a>
 
 ## Algunos comandos
 Crear componente
@@ -40,6 +52,13 @@ Crear Pipe
     ng g pipe <nombre-pipe>
 ```
 
+Generar Routing
+```
+    ng g module app-routing --flat --module=app
+    --flat puts the file in src/app instead of its own folder.
+    --module=app tells the CLI to register it in the imports array of the AppModule.
+```
+
 Optimizado para producción
 ```
     ng build --prod
@@ -53,6 +72,11 @@ Subir al tiempo todas las ramas
 Agregar todos los archivos modificados y escribir mensaje
 ```
     git commit -am "mensaje"
+```
+
+Crear y mover a rama
+```
+    git checkout -b <nombre-rama>
 ```
 
 Compilar TypeScript y visualizar
