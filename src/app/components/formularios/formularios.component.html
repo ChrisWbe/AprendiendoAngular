@@ -38,15 +38,19 @@
             </div>
             
         </div>
-        <button [disabled]="!formularioCreado.valid" (click)="agregar()" class="btn btn-primary">Agregar</button>
+        <button *ngIf="esNuevo" [disabled]="!formularioCreado.valid" (click)="agregar()" class="btn btn-primary">Agregar</button>
+        <button *ngIf="!esNuevo" [disabled]="!formularioCreado.valid" (click)="editar()" class="btn btn-danger">Editar</button>
     </form>
 
     <p>Es válido: {{formularioCreado.valid}}</p>
     <p>{{formularioCreado.value | json}}</p>
 
-    <div *ngFor="let usuario of usuarios">
-        <h4>{{usuario.nombre}}</h4>
+
+    <div *ngFor="let usuario of usuarios; let i = index" class="card">
+        <h4>{{usuario.nombre}} posicion: {{i}}</h4>
         <p>{{usuario.correo}}</p>
         <p>{{usuario.password}}</p>
+        <button (click)="editarUsuario(i)" class="btn btn-success">Editar</button>
+        <button (click)="eliminarUsuario(i)" class="btn btn-dark">Eliminar</button>
     </div>
 </div>
