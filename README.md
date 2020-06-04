@@ -35,6 +35,8 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 
 <a href="https://getbootstrap.com/">Bootstrap</a>
 
+<a href="https://jsonplaceholder.typicode.com/">JsonPlaceHolder</a>
+
 ## Algunos comandos
 Crear componente
 ```
