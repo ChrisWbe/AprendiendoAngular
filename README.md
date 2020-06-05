@@ -29,6 +29,7 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 - **Routing**
 - **Reactive Forms**
 - **Servicios**
+- **LocalStorage**
 
 ## Links de interes
 <a href="https://angular.io/cli">Angular CLI</a>
