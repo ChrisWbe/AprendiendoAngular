@@ -1,9 +1,9 @@
 <div class="container">
     <div class="articulo" *ngFor="let data of dataPlaceHolder">
-        <h4 (click)="irAlDetalle(data)" >{{data.title}}</h4>
-        <p>{{data.userId}}</p>
-        <p>{{data.id}}</p>
+        <h4 (click)="irAlDetalle(data)" >ID: {{data.id}}, UserID:{{data.userId}} {{data.title}}</h4>
         <p>{{data.body}}</p>
+        <button (click)="borrar(data.id)" class="btn btn-danger">Borrar</button>
+        <button (click)="actualizar(data)" class="btn btn-primary">Actualizar</button>
     </div>
     
 </div>

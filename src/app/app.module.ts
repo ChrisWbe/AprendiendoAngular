@@ -11,7 +11,9 @@ import { ArticuloDetalleComponent } from './components/articulo-detalle/articulo
 import { ArticulosService } from './services/articulos.service';
 import { JsonPlaceHolderComponent } from './components/json-place-holder/json-place-holder.component';
 import {HttpClientModule} from '@angular/common/http';
-import { UserDetalleComponent } from './components/user-detalle/user-detalle.component'
+import { UserDetalleComponent } from './components/user-detalle/user-detalle.component';
+import { AgregarDataPlaceHolderComponent } from './components/agregar-data-place-holder/agregar-data-place-holder.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { UserDetalleComponent } from './components/user-detalle/user-detalle.com
     PerfilComponent,
     ArticuloDetalleComponent,
     JsonPlaceHolderComponent,
-    UserDetalleComponent
+    UserDetalleComponent,
+    AgregarDataPlaceHolderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     UsuarioService,

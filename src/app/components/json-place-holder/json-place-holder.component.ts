@@ -18,12 +18,36 @@ export class JsonPlaceHolderComponent implements OnInit {
     this.dataPlaceHolderInyectado.leerNoticia().subscribe((data)=>{
       this.dataPlaceHolder = data;
     })
+
+    let dataPlaceHolderEnviar: DataPlaceHolder = new DataPlaceHolder
+    dataPlaceHolderEnviar.body = "Prueba de body";
+    dataPlaceHolderEnviar.title = "Title prueba";
+    dataPlaceHolderEnviar.userId = 4;
+
+    this.dataPlaceHolderInyectado.guardarArticulo(dataPlaceHolderEnviar).subscribe((dataPlaceHolderCreado)=>{
+      //debugger
+      this.dataPlaceHolder.push(dataPlaceHolderCreado);
+    })
   }
 
   irAlDetalle(data:DataPlaceHolder){
     console.log(data)
     this.dataPlaceHolderInyectado.jsonPlaceholder = data;
     this.ruta.navigateByUrl('user-detalle');
+  }
+
+  borrar(id:number){
+    this.dataPlaceHolderInyectado.borrarArticulo(id).subscribe((data)=>{
+      console.log(data)
+    })
+  }
+
+  actualizar(jsonPlaceholder:DataPlaceHolder){
+    this.dataPlaceHolderInyectado.jsonPlaceholder = jsonPlaceholder;
+    this.ruta.navigateByUrl('agregar-data-place-holder/false')
+    // this.dataPlaceHolderInyectado.actualizarArticulo(jsonPlaceholder).subscribe((dataRecibido)=>{
+    //   console.log(dataRecibido)
+    // })  
   }
 
 }

@@ -24,5 +24,21 @@ export class JsonPlaceHolderService {
     return this.http.get<User>(`${this.ruta}/users/${userId}`);
    }
 
+   guardarArticulo(jsonPlaceholder:DataPlaceHolder):Observable<DataPlaceHolder>{
+      return this.http.post<DataPlaceHolder>(`${this.ruta}/posts`, jsonPlaceholder)
+   }
+
+   leerTodosLosUsuarios():Observable<User[]>{
+     return this.http.get<User[]>(`${this.ruta}/users`)
+   }
+
+   borrarArticulo(id:number):Observable<any>{
+     return this.http.delete<any>(`${this.ruta}/posts/${id}`)
+   }
+
+   actualizarArticulo(jsonPlaceholder:DataPlaceHolder):Observable<DataPlaceHolder>{
+    return this.http.put<DataPlaceHolder>(`${this.ruta}/posts/${jsonPlaceholder.id}`, jsonPlaceholder)
+   }
+
 
 }
