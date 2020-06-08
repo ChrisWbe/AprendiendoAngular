@@ -11,7 +11,7 @@ export class ClientesService {
   agregarLocalStorage(cliente:Clientes){
     let clientesAntiguos:Clientes[] = this.clientesLocalStorage;
     cliente.clienteId = clientesAntiguos.length+1;
-    debugger
+    //debugger
     clientesAntiguos.push(cliente)
     localStorage.setItem('clientes', JSON.stringify(clientesAntiguos))
   }

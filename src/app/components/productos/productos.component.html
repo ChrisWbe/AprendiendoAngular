@@ -1,1 +1,22 @@
-<p>productos works!</p>
+<div class="container mt-5">
+    <form action="" class="form-group">
+        <input type="text" (input)="buscarProductos($event)" class="form-control" placeholder="Busque un Producto..." >
+    </form>
+    <button routerLink="/agregar-productos" class="btn btn-primary">Agregar Producto Nuevo</button>
+    <div class="row mt-4">
+        <div class="col-sm-3" *ngFor="let producto of productos">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{producto.nombre}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{producto.productoId}}}</h6>
+                  <p class="card-text">{{producto.descripcion}}</p>
+                  <p class="card-text">{{producto.precio | currency :"COP "}}</p>
+                  <a href="#" class="card-link">Agregar</a>
+                  <a href="#" class="card-link">Eliminar</a>
+                </div>
+              </div>
+        </div>
+
+        
+    </div>
+</div>
