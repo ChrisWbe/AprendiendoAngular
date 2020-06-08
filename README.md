@@ -42,6 +42,10 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 
 <a href="https://jsonplaceholder.typicode.com/">JsonPlaceHolder</a>
 
+<a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">Atajos Visual Studio</a>
+
+<a href="https://www.madewithangular.com/">Proyectos realizados con Angular</a>
+
 ## Algunos comandos
 Crear componente
 ```
