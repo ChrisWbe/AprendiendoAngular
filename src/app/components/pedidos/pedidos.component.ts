@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/models/pedidos';
+import { PedidosService } from 'src/app/services/pedidos.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -8,10 +9,10 @@ import { Pedido } from 'src/app/models/pedidos';
 })
 export class PedidosComponent implements OnInit {
 
-  constructor() { }
+  constructor(public pedidosServicio:PedidosService) { }
 
   ngOnInit() {
-    let pedido: Pedido = new Pedido();
+    /* let pedido: Pedido = new Pedido();
     pedido.clienteId=1;
     pedido.pedidoId=1;
     pedido.nombreCliente="Juan";
@@ -46,7 +47,8 @@ export class PedidosComponent implements OnInit {
         total:75
       },
     )
-    console.log(pedido);
+    console.log(pedido); */
+
   }
 
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientesService } from 'src/app/services/clientes.service';
 import { Clientes } from 'src/app/models/clientes';
+import { PedidosService } from 'src/app/services/pedidos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ import { Clientes } from 'src/app/models/clientes';
 export class HomeComponent implements OnInit {
 
   clientes:Array<Clientes> = new Array<Clientes>();
-  constructor(public clientesServicios: ClientesService) { }
+  constructor(public clientesServicios: ClientesService, public pedidosServicio:PedidosService, public router:Router) { }
 
   ngOnInit() {
     this.clientes=this.clientesServicios.clientesLocalStorage;
@@ -23,6 +25,12 @@ export class HomeComponent implements OnInit {
     this.clientes = this.clientesServicios.clientesLocalStorage.filter(x =>{
       return x.nombre.toLocaleLowerCase().includes(nombreBuscar.toLocaleLowerCase())
     })
+  }
+
+  irAProductos(cliente:Clientes){
+    this.pedidosServicio.pedido.clienteId = cliente.clienteId;
+    this.pedidosServicio.pedido.nombreCliente = `${cliente.nombre} ${cliente.apellido}`;
+    this.router.navigateByUrl("/productos")
   }
 
 }
