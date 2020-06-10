@@ -57,6 +57,8 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 
 <a href="https://valor-software.com/ngx-bootstrap/#/">ngx-bootstrap</a>
 
+<a href="https://github.com/angular/angularfire">AngularFire</a>
+
 ## Algunos comandos
 Crear componente
 ```
