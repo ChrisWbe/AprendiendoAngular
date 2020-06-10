@@ -53,6 +53,10 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 
 <a href="https://www.npmjs.com/">Paquetes npm</a>
 
+<a href="https://www.npmjs.com/package/bootstrap">Bootstrap npm</a>
+
+<a href="https://valor-software.com/ngx-bootstrap/#/">ngx-bootstrap</a>
+
 ## Algunos comandos
 Crear componente
 ```
