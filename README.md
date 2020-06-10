@@ -29,7 +29,8 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 - **Routing**
 - **Reactive Forms**
 - **Servicios**
-- **LocalStorage** : Sistema de pedidos, se agregan clientes y productos, y se relacionan en pedidos. Se utiliza muchos arreglos
+- **LocalStorage**: Sistema de pedidos, se agregan clientes y productos, y se relacionan en pedidos. Se utiliza muchos arreglos
+- **ViewChild**: Usado para acceder a cualquier componente hijo desde el componente padre, tambien para acceder a elementos HTML
 
 ## Links de interes
 <a href="https://angular.io/cli">Angular CLI</a>
