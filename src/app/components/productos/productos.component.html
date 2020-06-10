@@ -7,12 +7,12 @@
         <div class="col-sm-3" *ngFor="let producto of productos">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">{{producto.nombre}}</h5>
+                  <h5 cassdflass="card-title">{{producto.nombre}}</h5>
                   <h6 class="card-subtitle mb-2 text-muted">{{producto.productoId}}}</h6>
                   <p class="card-text">{{producto.descripcion}}</p>
                   <p class="card-text">{{producto.precio | currency :"COP "}}</p>
-                  <a (click)="agregar(producto)" class="card-link">Agregar</a>
-                  <a href="#" class="card-link">Eliminar</a>
+                  <button (click)="agregar(producto)" class="btn btn-primary">Agregar</button>
+                  
                 </div>
               </div>
         </div>

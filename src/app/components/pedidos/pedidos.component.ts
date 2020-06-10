@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/models/pedidos';
 import { PedidosService } from 'src/app/services/pedidos.service';
+import { PedidoDetalle } from 'src/app/models/pedidoDetalle';
 
 @Component({
   selector: 'app-pedidos',
@@ -8,10 +9,13 @@ import { PedidosService } from 'src/app/services/pedidos.service';
   styleUrls: ['./pedidos.component.css']
 })
 export class PedidosComponent implements OnInit {
+  pedido: Pedido = new Pedido();
+
 
   constructor(public pedidosServicio:PedidosService) { }
 
   ngOnInit() {
+    this.pedido = this.pedidosServicio.pedido;
     /* let pedido: Pedido = new Pedido();
     pedido.clienteId=1;
     pedido.pedidoId=1;
@@ -49,6 +53,21 @@ export class PedidosComponent implements OnInit {
     )
     console.log(pedido); */
 
+  }
+
+  calcularTotal(posicion:number){
+    this.pedidosServicio.pedido.actualizarCantidades(posicion)
+    this.pedidosServicio.guardarLocalStorage()
+    //this.pedidosServicio.pedido.pedidoDetalle[posicion].total = this.pedidosServicio.pedido.pedidoDetalle[posicion].cantidad*this.pedidosServicio.pedido.pedidoDetalle[posicion].precio
+  }
+
+  guardar(){
+    this.pedidosServicio.guardarPedido()
+  }
+
+  eliminar(posicion:number){
+    this.pedidosServicio.pedido.pedidoDetalle.splice(posicion, 1)
+    this.pedidosServicio.guardarLocalStorage()
   }
 
 }

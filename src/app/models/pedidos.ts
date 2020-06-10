@@ -8,7 +8,15 @@ export class Pedido{
     total:number;
     pedidoDetalle:Array<PedidoDetalle>;
 
-    constructor(){
+    constructor(datos?:Pedido){
+        if(datos!=null){
+            this.clienteId=datos.clienteId
+            this.pedidoId=datos.pedidoId;
+            this.nombreCliente=datos.nombreCliente;
+            this.total=datos.total;
+            this.pedidoDetalle=datos.pedidoDetalle;
+            return;
+        }
         this.clienteId=this.clienteId;
         this.pedidoId=this.pedidoId;
         this.nombreCliente=this.nombreCliente;
@@ -33,8 +41,21 @@ export class Pedido{
         }else{
             this.pedidoDetalle.push(pedidoDetalle)
         }
+        this.actualizarTotal();
     
-      }
+    }
+
+    private actualizarTotal(){
+        this.total = 0;
+        for(let producto of this.pedidoDetalle){
+            this.total+=producto.total
+        }
+    }
+
+    public actualizarCantidades(posicion:number){
+        this.pedidoDetalle[posicion].total = this.pedidoDetalle[posicion].cantidad*this.pedidoDetalle[posicion].precio
+        this.actualizarTotal()
+    }
 
 
 }

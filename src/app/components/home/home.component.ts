@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   irAProductos(cliente:Clientes){
     this.pedidosServicio.pedido.clienteId = cliente.clienteId;
     this.pedidosServicio.pedido.nombreCliente = `${cliente.nombre} ${cliente.apellido}`;
+    this.pedidosServicio.guardarLocalStorage();
     this.router.navigateByUrl("/productos")
   }
 
