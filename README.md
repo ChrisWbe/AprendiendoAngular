@@ -30,7 +30,8 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 - **Reactive Forms**
 - **Servicios**
 - **LocalStorage**: Sistema de pedidos, se agregan clientes y productos, y se relacionan en pedidos. Se utiliza muchos arreglos
-- **ViewChild**: Usado para acceder a cualquier componente hijo desde el componente padre, tambien para acceder a elementos HTML
+- **Core**: ViewChild, Interacción de datos entre componentes, Input, Output, Intalación de paquetes de terceros y utilización
+- **Cliclo de vida**
 
 ## Links de interes
 <a href="https://angular.io/cli">Angular CLI</a>
@@ -46,6 +47,10 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">Atajos Visual Studio</a>
 
 <a href="https://www.madewithangular.com/">Proyectos realizados con Angular</a>
+
+<a href="https://sweetalert2.github.io/">SweetAlert</a>
+
+<a href="https://www.npmjs.com/">Paquetes npm</a>
 
 ## Algunos comandos
 Crear componente
@@ -89,6 +94,16 @@ Agregar todos los archivos modificados y escribir mensaje
 Crear y mover a rama
 ```
     git checkout -b <nombre-rama>
+```
+
+Renombrar Rama Local
+```
+    git branch -m <nombre-rama> <nombre-rama-nueva>
+```
+
+Eliminar Rama Remota
+```
+    git push origin :<nombre-rama>
 ```
 
 Compilar TypeScript y visualizar
