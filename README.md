@@ -31,7 +31,7 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 - **Servicios**
 - **LocalStorage**: Sistema de pedidos, se agregan clientes y productos, y se relacionan en pedidos. Se utiliza muchos arreglos
 - **Core**: ViewChild, Interacción de datos entre componentes, Input, Output, Intalación de paquetes de terceros y utilización
-- **Cliclo de vida**
+- **ClicloDeVida**: Etapas o ciclos que atraviesa un componente, desde es creado, renderizado hasta que es eliminado del DOM.
 
 ## Links de interes
 <a href="https://angular.io/cli">Angular CLI</a>
