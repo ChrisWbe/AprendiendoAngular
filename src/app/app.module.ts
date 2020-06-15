@@ -16,6 +16,8 @@ import { AgregarProductosComponent } from './components/agregar-productos/agrega
 import { ProductosService } from './services/productos.service';
 import { PedidosService } from './services/pedidos.service';
 import { ListadoPedidosComponent } from './components/listado-pedidos/listado-pedidos.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { ListadoPedidosComponent } from './components/listado-pedidos/listado-pe
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ClientesService, ProductosService, PedidosService],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@ import { PedidosService } from 'src/app/services/pedidos.service';
 })
 export class EncabezadoComponent implements OnInit {
 
-  constructor(private pedidosServicio:PedidosService) { }
+  constructor(public pedidosServicio:PedidosService) { }
 
   ngOnInit() {
     
