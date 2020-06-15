@@ -59,6 +59,8 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 
 <a href="https://github.com/angular/angularfire">AngularFire</a>
 
+<a href="https://angular.io/guide/service-worker-getting-started">PWA, Service Worker</a>
+
 ## Algunos comandos
 Crear componente
 ```
@@ -86,6 +88,12 @@ Generar Routing
 Optimizado para producción
 ```
     ng build --prod
+```
+
+Configuración PWA, Service-worker
+```
+    ng add @angular/pwa
+    (Servidor node: npm i http-server)
 ```
 
 Subir al tiempo todas las ramas
