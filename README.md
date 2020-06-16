@@ -53,11 +53,11 @@ En este proyecto se buscar estudiar Angular, el cual se basa en varios cursos de
 
 <a href="https://www.npmjs.com/">Paquetes npm</a>
 
-<a href="https://www.npmjs.com/package/bootstrap">Bootstrap npm</a>
+<a href="https://www.npmjs.com/package/bootstrap">Bootstrap npm</a> - Instalación de Bootstrap por npm
 
-<a href="https://valor-software.com/ngx-bootstrap/#/">ngx-bootstrap</a>
+<a href="https://valor-software.com/ngx-bootstrap/#/">ngx-bootstrap</a> - Instalación de ngx para funcionalidades javascript de bootstrap
 
-<a href="https://github.com/angular/angularfire">AngularFire</a>
+<a href="https://github.com/angular/angularfire">AngularFire</a> - <a href="https://www.npmjs.com/package/@angular/fire">@angular/fire</a>
 
 <a href="https://angular.io/guide/service-worker-getting-started">PWA, Service Worker</a>
 
