@@ -9,6 +9,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebase)
     
   ],
-  providers: [],
+  providers: [AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
