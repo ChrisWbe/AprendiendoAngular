@@ -12,6 +12,8 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
 
+import {ReactiveFormsModule} from '@angular/forms'
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AccordionModule.forRoot(), //Para que funcione en toda la aplicación
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule
     
   ],
   providers: [AngularFireAuth],
