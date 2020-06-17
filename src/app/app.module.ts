@@ -22,6 +22,7 @@ import { EncabezadoComponent } from './components/encabezado/encabezado.componen
 import { ListadoClientesComponent } from './components/listado-clientes/listado-clientes.component';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cliente.component';
+import { MensajesService } from './services/mensajes.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cl
     AngularFireStorageModule
     
   ],
-  providers: [AngularFireAuth, AngularFirestore],
+  providers: [AngularFireAuth, AngularFirestore, MensajesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
+import { MensajesService } from 'src/app/services/mensajes.service';
+
 
 
 @Component({
@@ -15,7 +17,7 @@ export class AgregarClienteComponent implements OnInit {
   porcentajeSubida:number = 0;
   editable:boolean=false;
   id:string="";
-  constructor(private fb:FormBuilder, private storage:AngularFireStorage, private db:AngularFirestore, private activeRouter:ActivatedRoute) { }
+  constructor(private msg:MensajesService, private fb:FormBuilder, private storage:AngularFireStorage, private db:AngularFirestore, private activeRouter:ActivatedRoute) { }
 
   ngOnInit() {
     
@@ -56,6 +58,7 @@ export class AgregarClienteComponent implements OnInit {
     this.formularioCliente.value.fechaNacimiento = new Date(this.formularioCliente.value.fechaNacimiento)
     this.db.collection('clientes').add(this.formularioCliente.value).then((resultado)=>{
       console.log("Registro Creado");
+      this.msg.success("Creado", "Registro creado exitosamente!");
     })
     console.log(this.formularioCliente.value)
   }
@@ -64,6 +67,10 @@ export class AgregarClienteComponent implements OnInit {
     this.formularioCliente.value.fechaNacimiento = new Date(this.formularioCliente.value.fechaNacimiento)
     this.db.doc(`clientes/${this.id}`).update(this.formularioCliente.value).then((resultado)=>{
       console.log("Registro Actualizado");
+      this.msg.success("Editado", "Registro editado exitosamente")
+      
+    }).catch(()=>{
+      this.msg.error("Error", "Ocurrio algún error");
     })
   }
 
