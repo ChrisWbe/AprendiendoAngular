@@ -20,11 +20,6 @@ export class AppComponent {
       this.usuario = usuario;
     })
   }
-  login() {
-    this.ofauth.auth.signInWithEmailAndPassword("chriswbe1993@gmail.com", "123456789");
-  }
-  logout() {
-    //console.log(this.ofauth.user.email)
-    this.ofauth.auth.signOut();
-  }
+
+  
 }

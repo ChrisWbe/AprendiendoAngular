@@ -13,17 +13,19 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
 
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { EncabezadoComponent } from './components/encabezado/encabezado.component';
+import { ListadoClientesComponent } from './components/listado-clientes/listado-clientes.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    EncabezadoComponent
+    EncabezadoComponent,
+    ListadoClientesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { EncabezadoComponent } from './components/encabezado/encabezado.componen
     BsDropdownModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FormsModule
     
   ],
   providers: [AngularFireAuth],
