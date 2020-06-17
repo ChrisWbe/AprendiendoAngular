@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
@@ -19,6 +20,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { EncabezadoComponent } from './components/encabezado/encabezado.component';
 import { ListadoClientesComponent } from './components/listado-clientes/listado-clientes.component';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cliente.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
     AppComponent,
     LoginComponent,
     EncabezadoComponent,
-    ListadoClientesComponent
+    ListadoClientesComponent,
+    AgregarClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     BrowserAnimationsModule,
     AccordionModule.forRoot(), //Para que funcione en toda la aplicación
     BsDropdownModule.forRoot(),
+    ProgressbarModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     ReactiveFormsModule,
     NgxSpinnerModule,
