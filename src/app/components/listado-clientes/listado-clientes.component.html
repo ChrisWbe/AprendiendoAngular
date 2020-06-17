@@ -7,10 +7,11 @@
           </div>
     </form>
     <div class="row">
-        <div class="col-md-3" *ngFor="let cliente of clientes">
+        <div class="col-md-3 col-sm-4" *ngFor="let cliente of clientes">
             <div class="card">
                 <img class="card-img-top imgCliente" [src]="cliente.imgUrl" alt="Card image cap">
                 <div class="card-body">
+                    <p>{{cliente.id}}</p>
                   <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
                   
                   <a href="#" class="card-link">Editar</a>
