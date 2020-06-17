@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-agregar-cliente',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agregar-cliente.component.css']
 })
 export class AgregarClienteComponent implements OnInit {
-
-  constructor() { }
+  formularioCliente:FormGroup;
+  constructor(private fb:FormBuilder) { }
 
   ngOnInit() {
+    this.formularioCliente= this.fb.group({
+      nombre:['', Validators.required],
+      apellido:['', Validators.required],
+      correo:['', Validators.compose([
+        Validators.required, Validators.email
+      ])],
+      cedula:[''],
+      fechaNacimiento:['', Validators.required],
+      telefono:[''],
+      imgUrl:['', Validators.required]
+    })
+  }
+
+  agregar(){
+    console.log(this.formularioCliente.value)
   }
 
 }
