@@ -64,7 +64,8 @@
                 <progressbar [value]="porcentajeSubida" type="danger" [striped]="true">{{porcentajeSubida}}%</progressbar>
             </div>
             <br><br>
-            <button class="btn btn-primary" (click)="agregar()" [disabled]="formularioCliente.invalid" >Agregar</button>
+            <button  *ngIf="!editable" class="btn btn-primary" (click)="agregar()" [disabled]="formularioCliente.invalid" >Agregar</button>
+            <button  *ngIf="editable" class="btn btn-primary" (click)="editar()" [disabled]="formularioCliente.invalid" >Editar</button>
         </div>
     </form>
 </div>

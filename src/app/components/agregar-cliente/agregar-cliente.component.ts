@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AgregarClienteComponent implements OnInit {
   formularioCliente:FormGroup;
   porcentajeSubida:number = 0;
-  constructor(private fb:FormBuilder, private storage:AngularFireStorage, private db:AngularFirestore) { }
+  editable:boolean=false;
+  id:string="";
+  constructor(private fb:FormBuilder, private storage:AngularFireStorage, private db:AngularFirestore, private activeRouter:ActivatedRoute) { }
 
   ngOnInit() {
+    
     this.formularioCliente= this.fb.group({
       nombre:['', Validators.required],
       apellido:['', Validators.required],
@@ -26,6 +30,26 @@ export class AgregarClienteComponent implements OnInit {
       telefono:[''],
       imgUrl:['', Validators.required]
     })
+
+    this.id = this.activeRouter.snapshot.params.clienteID
+    if(this.id!=undefined){
+      this.editable=true;
+      console.log(this.id)
+      this.db.doc<any>(`clientes/${this.activeRouter.snapshot.params.clienteID}`).valueChanges().subscribe((cliente)=>{
+        console.log(cliente)
+        this.formularioCliente.setValue({
+          nombre:cliente.nombre,
+          apellido:cliente.apellido,
+          correo:cliente.correo,
+          cedula:cliente.cedula,
+          fechaNacimiento:new Date(cliente.fechaNacimiento.seconds*1000).toISOString().substr(0,10),
+          telefono:cliente.telefono,
+          imgUrl:""
+          
+        })
+      })
+    }
+    
   }
 
   agregar(){
@@ -34,6 +58,13 @@ export class AgregarClienteComponent implements OnInit {
       console.log("Registro Creado");
     })
     console.log(this.formularioCliente.value)
+  }
+
+  editar(){
+    this.formularioCliente.value.fechaNacimiento = new Date(this.formularioCliente.value.fechaNacimiento)
+    this.db.doc(`clientes/${this.id}`).update(this.formularioCliente.value).then((resultado)=>{
+      console.log("Registro Actualizado");
+    })
   }
 
   subirImagen(evento){

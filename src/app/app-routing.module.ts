@@ -5,6 +5,7 @@ import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cl
 
 const routes :Routes=[
   {path:"listado-clientes", component:ListadoClientesComponent},
+  {path:"agregar-cliente/:clienteID", component:AgregarClienteComponent},
   {path:"agregar-cliente", component:AgregarClienteComponent},
 ]
 
