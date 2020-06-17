@@ -53,7 +53,7 @@
             <div class="col-sm-12">
                 <div class="form-group">
                     <label for="">Imagen</label>
-                    <input placeholder="Agregue su imagen" formControlName="imgUrl" type="file" class="form-control-file">
+                    <input (change)="subirImagen($event)" placeholder="Agregue su imagen" formControlName="imgUrl" type="file" class="form-control-file">
                     <div *ngIf="formularioCliente.controls['imgUrl'].invalid && formularioCliente.controls['imgUrl'].dirty" class="alert alert-danger" role="alert">
                         <span *ngIf="formularioCliente.controls['imgUrl'].errors.required" >Imagen es requerida</span>
                     </div>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="col-sm-12">
-                <progressbar [value]="22" type="danger" [striped]="true">22%</progressbar>
+                <progressbar [value]="porcentajeSubida" type="danger" [striped]="true">{{porcentajeSubida}}%</progressbar>
             </div>
             <br><br>
             <button class="btn btn-primary" (click)="agregar()" [disabled]="formularioCliente.invalid" >Agregar</button>

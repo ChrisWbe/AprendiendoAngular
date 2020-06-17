@@ -10,6 +10,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
@@ -41,7 +42,8 @@ import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cl
     AngularFireModule.initializeApp(environment.firebase),
     ReactiveFormsModule,
     NgxSpinnerModule,
-    FormsModule
+    FormsModule,
+    AngularFireStorageModule
     
   ],
   providers: [AngularFireAuth, AngularFirestore],
