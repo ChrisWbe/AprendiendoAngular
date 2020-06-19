@@ -12,6 +12,7 @@ export class Cliente{
     id:string;
     visible:boolean;
     constructor(){
+        this.ref= this.ref
     
 
     }

@@ -6,5 +6,9 @@ export class Precio{
     duracion:number;
     tipoDuracion:string;
     id:string;
-    ref:DocumentReference
+    ref:DocumentReference;
+
+    constructor(){
+        this.ref = this.ref
+    }
 }
