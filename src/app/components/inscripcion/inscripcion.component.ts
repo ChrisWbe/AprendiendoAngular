@@ -3,6 +3,7 @@ import { Inscripcion } from 'src/app/models/inscrpicion';
 import { Cliente } from 'src/app/models/cliente';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Precio } from 'src/app/models/precio';
+import { MensajesService } from 'src/app/services/mensajes.service';
 
 @Component({
   selector: 'app-inscripcion',
@@ -14,8 +15,9 @@ export class InscripcionComponent implements OnInit {
   clienteSeleccionado:Cliente = new Cliente();
   precioSeleccionado:Precio = new Precio();
   precios:Array<Precio> = new Array<Precio>();
+  idPrecio:string = "null"
 
-  constructor(private db:AngularFirestore) { }
+  constructor(private db:AngularFirestore, private msg:MensajesService) { }
 
   ngOnInit() {
     this.db.collection("precios").get().subscribe((resultado)=>{
@@ -43,8 +45,26 @@ export class InscripcionComponent implements OnInit {
   guardar(){
     // debugger
     console.log(this.inscripcion)
+
+    let inscripcion = {
+      fecha:this.inscripcion.fecha,
+      fechaFinal:this.inscripcion.fechaFinal,
+      precios:this.inscripcion.precios,
+      cliente:this.inscripcion.cliente,
+      subTotal:this.inscripcion.subTotal,
+      isv:this.inscripcion.isv,
+      total:this.inscripcion.total
+    }
     if(this.inscripcion.validar().esValido){
-      console.log("guarda")
+      this.db.collection("inscripciones").add(inscripcion).then(()=>{
+        this.msg.success("Agregado", "Inscripción agregada")
+        this.inscripcion = new Inscripcion()
+        this.clienteSeleccionado = new Cliente()
+        this.precioSeleccionado = new Precio()
+        this.idPrecio="null"
+      }).catch(()=>{
+        this.msg.error("Error", "Ocurrio un error")
+      })
     }else{
       console.log(this.inscripcion.validar().mensaje)
     }
