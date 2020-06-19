@@ -19,11 +19,23 @@ export class SeleccionarClienteComponent implements OnInit {
         let cliente:Cliente = item.data() as Cliente;
         cliente.id = item.id
         cliente.ref = item.ref;
+        cliente.visible=false;
         this.clientes.push(cliente)
       })
     })
 
     console.log(this.clientes)
+  }
+
+  buscarClientes(nombre:string){
+    console.log(nombre)
+    this.clientes.forEach((cliente)=>{
+      if(cliente.nombre.includes(nombre.toLowerCase())){
+        cliente.visible=true;
+      }else{
+        cliente.visible=false;
+      }
+    })
   }
 
 }

@@ -10,7 +10,7 @@ export class Cliente{
     cedula:string;
     ref:DocumentReference;
     id:string;
-
+    visible:boolean;
     constructor(){
 
     }
