@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Inscripcion } from 'src/app/models/inscrpicion';
 import { Cliente } from 'src/app/models/cliente';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Precio } from 'src/app/models/precio';
 
 @Component({
   selector: 'app-inscripcion',
@@ -10,10 +12,19 @@ import { Cliente } from 'src/app/models/cliente';
 export class InscripcionComponent implements OnInit {
   inscripcion:Inscripcion = new Inscripcion();
   clienteSeleccionado:Cliente = new Cliente();
+  precios:Array<Precio> = new Array<Precio>();
 
-  constructor() { }
+  constructor(private db:AngularFirestore) { }
 
   ngOnInit() {
+    this.db.collection("precios").get().subscribe((resultado)=>{
+      resultado.docs.forEach((item)=>{
+        let precio = item.data() as Precio
+        precio.id = item.id;
+        precio.ref=item.ref;
+        this.precios.push(precio)
+      })
+    })
   }
 
   asignarCliente(cliente:Cliente){
