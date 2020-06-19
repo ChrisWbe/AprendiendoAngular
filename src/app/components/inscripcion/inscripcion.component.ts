@@ -50,6 +50,33 @@ export class InscripcionComponent implements OnInit {
     this.precioSeleccionado = this.precios.find(x=> x.id==id)
     this.inscripcion.precios = this.precioSeleccionado.ref
     console.log(this.precioSeleccionado)
+
+    this.inscripcion.fecha = new Date()
+
+    switch(this.precioSeleccionado.tipoDuracion){
+      case "1":{
+        this.inscripcion.fechaFinal = new Date(this.inscripcion.fecha.getFullYear(), this.inscripcion.fecha.getMonth(), this.inscripcion.fecha.getDay() + this.precioSeleccionado.duracion*1);
+        break
+      }
+      case "2":{
+        this.inscripcion.fechaFinal = new Date(this.inscripcion.fecha.getFullYear(), this.inscripcion.fecha.getMonth(), this.inscripcion.fecha.getDay() + this.precioSeleccionado.duracion*7);
+        break
+      }
+      case "3":{
+        this.inscripcion.fechaFinal = new Date(this.inscripcion.fecha.getFullYear(), this.inscripcion.fecha.getMonth(), this.inscripcion.fecha.getDay() + this.precioSeleccionado.duracion*15);
+        break
+      }
+      case "4":{
+        this.inscripcion.fechaFinal = new Date(this.inscripcion.fecha.getFullYear(), this.inscripcion.fecha.getMonth() + this.precioSeleccionado.duracion, this.inscripcion.fecha.getDay());
+        break
+      }
+      case "5":{
+        this.inscripcion.fechaFinal = new Date(this.inscripcion.fecha.getFullYear()+ this.precioSeleccionado.duracion, this.inscripcion.fecha.getMonth(), this.inscripcion.fecha.getDay() + this.precioSeleccionado.duracion*15);
+        break
+      }
+    }
+
+    debugger
   }
 
 }

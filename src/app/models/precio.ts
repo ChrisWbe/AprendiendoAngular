@@ -4,7 +4,7 @@ export class Precio{
     nombre:string;
     costo:number;
     duracion:number;
-    tipoDuracion:number;
+    tipoDuracion:string;
     id:string;
     ref:DocumentReference
 }
