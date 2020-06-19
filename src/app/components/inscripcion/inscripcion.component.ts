@@ -12,6 +12,7 @@ import { Precio } from 'src/app/models/precio';
 export class InscripcionComponent implements OnInit {
   inscripcion:Inscripcion = new Inscripcion();
   clienteSeleccionado:Cliente = new Cliente();
+  precioSeleccionado:Precio = new Precio();
   precios:Array<Precio> = new Array<Precio>();
 
   constructor(private db:AngularFirestore) { }
@@ -43,6 +44,12 @@ export class InscripcionComponent implements OnInit {
     // debugger
     console.log(this.inscripcion)
     // debugger
+  }
+
+  seleccionarPrecio(id:string){
+    this.precioSeleccionado = this.precios.find(x=> x.id==id)
+    this.inscripcion.precios = this.precioSeleccionado.ref
+    console.log(this.precioSeleccionado)
   }
 
 }
