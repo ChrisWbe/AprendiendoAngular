@@ -51,6 +51,10 @@ export class InscripcionComponent implements OnInit {
     this.inscripcion.precios = this.precioSeleccionado.ref
     console.log(this.precioSeleccionado)
 
+    this.inscripcion.subTotal = this.precioSeleccionado.costo
+    this.inscripcion.isv = this.inscripcion.subTotal*0.15
+    this.inscripcion.total = this.inscripcion.subTotal+this.inscripcion.isv
+
     this.inscripcion.fecha = new Date()
 
     switch(this.precioSeleccionado.tipoDuracion){
