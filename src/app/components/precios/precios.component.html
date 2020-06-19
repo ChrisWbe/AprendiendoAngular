@@ -3,30 +3,27 @@
         <div class="col-sm-8">
             <h4>Precios</h4>
             <ul>
-                <li>Precio1</li>
-                <li>Precio1</li>
-                <li>Precio1</li>
-                <li>Precio1</li>
+                <li *ngFor="let precio of precios">{{precio.nombre}}</li>
             </ul>
         </div>
         <div class="col-sm-4">
             <h4>Editar</h4>
-            <form action="" >
+            <form [formGroup]="formularioPrecio" action="" >
                 <div class="form-group">
                     <label for="">Nombre</label>
-                    <input class="form-control" type="text">
+                    <input formControlName="nombre" class="form-control" type="text">
                 </div>
                 <div class="form-group">
                     <label for="">Costo</label>
-                    <input class="form-control" type="number">
+                    <input formControlName="costo" class="form-control" type="number">
                 </div>
                 <div class="form-group">
                     <label for="">Duración</label>
-                    <input class="form-control" type="number">
+                    <input formControlName="duracion" class="form-control" type="number">
                 </div>
                 <div class="form-group">
                     <label for="">Tipo Duración</label>
-                    <select class="form-control" name="" id="">
+                    <select formControlName="tipoDuracion" class="form-control" name="" id="">
                         <option value="1">Día</option>
                         <option value="2">Semana</option>
                         <option value="3">Quincena</option>
@@ -34,8 +31,8 @@
                         <option value="5">Año</option>
                     </select>
                 </div>
-                <button class="btn btn-primary">Agregar</button>
-                <button class="btn btn-danger">Editar</button>
+                <button [disabled]="formularioPrecio.invalid" (click)="agregar()" class="btn btn-primary">Agregar</button>
+                <button [disabled]="formularioPrecio.invalid" (click)="editar()" class="btn btn-danger">Editar</button>
             </form>
         </div>
     </div>
