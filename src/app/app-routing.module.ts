@@ -4,6 +4,7 @@ import { ListadoClientesComponent } from './components/listado-clientes/listado-
 import { AgregarClienteComponent } from './components/agregar-cliente/agregar-cliente.component';
 import { PreciosComponent } from './components/precios/precios.component';
 import { InscripcionComponent } from './components/inscripcion/inscripcion.component';
+import { ListadoInscripcionesComponent } from './components/listado-inscripciones/listado-inscripciones.component';
 
 const routes :Routes=[
   {path:"", redirectTo:"inscripcion", pathMatch:"full"},
@@ -12,6 +13,7 @@ const routes :Routes=[
   {path:"agregar-cliente/:clienteID", component:AgregarClienteComponent},
   {path:"agregar-cliente", component:AgregarClienteComponent},
   {path:"precios", component:PreciosComponent},
+  {path:"listado-inscripciones", component:ListadoInscripcionesComponent},
   
 ]
 

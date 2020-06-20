@@ -26,6 +26,7 @@ import { MensajesService } from './services/mensajes.service';
 import { PreciosComponent } from './components/precios/precios.component';
 import { InscripcionComponent } from './components/inscripcion/inscripcion.component';
 import { SeleccionarClienteComponent } from './components/seleccionar-cliente/seleccionar-cliente.component';
+import { ListadoInscripcionesComponent } from './components/listado-inscripciones/listado-inscripciones.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SeleccionarClienteComponent } from './components/seleccionar-cliente/se
     AgregarClienteComponent,
     PreciosComponent,
     InscripcionComponent,
-    SeleccionarClienteComponent
+    SeleccionarClienteComponent,
+    ListadoInscripcionesComponent
   ],
   imports: [
     BrowserModule,
